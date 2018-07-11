@@ -1,0 +1,12 @@
+digraph G {
+
+  slack -> eventrc;
+  eventrc -> channel;
+  channel -> discriminator;
+  
+  discriminator -> dchannel;
+  
+  dchannel -> functionA;
+  dchannel -> functionB;
+
+}

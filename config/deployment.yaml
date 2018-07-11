@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: reddoor
+  namespace: reddoor
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: reddoor
+    spec:
+      serviceAccountName: reddoor
+      containers:
+      - name: reddoor
+        image: github.com/n3wscott/RedDoor/cmd/bot
+        args:
+        - "-logtostderr=true"
+        - "-stderrthreshold=INFO"

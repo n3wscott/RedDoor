@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: reddoor
+  namespace: reddoor
+  labels:
+    app: reddoor
+spec:
+  selector:
+    app: reddoor
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer
