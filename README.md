@@ -1,4 +1,4 @@
-# RedDoor
+# reddoor
 
 # Slack interactive message in Golang
 

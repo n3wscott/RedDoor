@@ -7,7 +7,7 @@ import (
 
 	"github.com/n3wscott/slack"
 
-	"github.com/n3wscott/RedDoor/pkg/actions"
+	"github.com/n3wscott/reddoor/pkg/actions"
 )
 
 type SlackListener struct {
@@ -72,11 +72,7 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 	case "beer":
 		return s.action.HandleBeer(ev)
 	default:
-		params := slack.PostMessageParameters{}
-
-		if _, _, err := s.Client.PostMessage(ev.Channel, "wat", params); err != nil {
-			return fmt.Errorf("failed to post message: %s", err)
-		}
+		return s.action.HandleRandomEmoji(ev)
 	}
 
 	return nil

@@ -6,8 +6,8 @@ import (
 	"os"
 
 	"github.com/kelseyhightower/envconfig"
-	"github.com/n3wscott/RedDoor/pkg/handlers"
-	"github.com/n3wscott/RedDoor/pkg/listeners"
+	"github.com/n3wscott/reddoor/pkg/handlers"
+	"github.com/n3wscott/reddoor/pkg/listeners"
 	"github.com/n3wscott/slack"
 )
 

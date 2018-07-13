@@ -21,7 +21,7 @@ type Actions struct {
 	ChannelID string
 }
 
-// handleMesageEvent handles message events.
+// HandleBeer handles message events.
 func (a *Actions) HandleBeer(ev *slack.MessageEvent) error {
 	// Only response in specific channel. Ignore else.
 	if ev.Channel != a.ChannelID {

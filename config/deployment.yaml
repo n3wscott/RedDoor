@@ -13,7 +13,28 @@ spec:
       serviceAccountName: reddoor
       containers:
       - name: reddoor
-        image: github.com/n3wscott/RedDoor/cmd/bot
+        image: github.com/n3wscott/reddoor/cmd/bot
         args:
         - "-logtostderr=true"
         - "-stderrthreshold=INFO"
+        env:
+          - name: BOT_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: reddoor
+                key: BOT_TOKEN
+          - name: VERIFICATION_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: reddoor
+                key: VERIFICATION_TOKEN
+          - name: BOT_ID
+            valueFrom:
+              secretKeyRef:
+                name: reddoor
+                key: BOT_ID
+          - name: CHANNEL_ID
+            valueFrom:
+              secretKeyRef:
+                name: reddoor
+                key: CHANNEL_ID
